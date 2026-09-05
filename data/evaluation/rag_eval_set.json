@@ -1,0 +1,141 @@
+[
+  {
+    "id": "academic_krs_2026_gasal",
+    "question": "Kapan registrasi akademik KRS Online semester gasal 2026/2027?",
+    "expected_domains": ["academic_administration"],
+    "expected_intent": "date_schedule",
+    "expected_sources": ["Kalender-Akademik-2026-2027.pdf"],
+    "expected_topics": ["academic_calendar"],
+    "key_facts": ["14", "18", "Agustus", "2026"]
+  },
+  {
+    "id": "academic_assessment_rules",
+    "question": "Apa aturan penilaian hasil belajar mahasiswa?",
+    "expected_domains": ["academic_administration"],
+    "expected_intent": "rule_policy",
+    "expected_sources": [
+      "PER-NO-21-TAHUN-2018-PENILAIAN-DAN-PROSES-HASIL-BELAJAR-MAHASISWA-UNIVERSITAS-NEGERI-MALANG.pdf"
+    ],
+    "expected_topics": ["penilaian_hasil_belajar"],
+    "key_facts": ["nilai akhir", "dosen", "A", "B", "C"]
+  },
+  {
+    "id": "academic_leave_rules",
+    "question": "Bagaimana aturan cuti kuliah mahasiswa?",
+    "expected_domains": ["academic_administration"],
+    "expected_intent": "rule_policy",
+    "expected_sources": [
+      "PER-NO-19-TAHUN-2018-TAHUN-AKADEMIK-KALENDER-AKADEMIK-DAN-SISTEM-ADMINISTRASI-AKADEMIK-UNIVERSITAS-NEGERI-MALANG.pdf",
+      "Pedoman-Pendidikan-Edisi-2020_Final.pdf"
+    ],
+    "expected_topics": ["administrasi_akademik", "pedoman_pendidikan"],
+    "key_facts": ["cuti", "mahasiswa"]
+  },
+  {
+    "id": "academic_leave_application_um",
+    "question": "Bagaimana cara mengajukan cuti kuliah di Universitas Negeri Malang?",
+    "expected_domains": ["academic_administration"],
+    "expected_intent": "procedure",
+    "expected_sources": [
+      "Pedoman-Pendidikan-Edisi-2020_Final.pdf",
+      "PER-NO-12-TAHUN-2018-PEDOMAN-PENDIDIKAN-UNIVERSITAS-NEGERI-MALANG-TAHUN-AKADEMIK-2018-2019.pdf",
+      "PER-NO-19-TAHUN-2018-TAHUN-AKADEMIK-KALENDER-AKADEMIK-DAN-SISTEM-ADMINISTRASI-AKADEMIK-UNIVERSITAS-NEGERI-MALANG.pdf"
+    ],
+    "expected_topics": ["administrasi_akademik", "pedoman_pendidikan"],
+    "key_facts": [
+      "format permohonan cuti",
+      "dosen PA",
+      "ketua jurusan",
+      "Wakil Dekan Bidang Akademik",
+      "Subbag Registrasi dan Statistik"
+    ]
+  },
+  {
+    "id": "finance_ukt_2025_gasal",
+    "question": "Kapan batas pembayaran UKT semester gasal 2025/2026?",
+    "expected_domains": ["finance_tuition_and_scholarship"],
+    "expected_intent": "payment_schedule",
+    "expected_sources": [
+      "Registrasi-Mahasiswa-Semester-Gasal-Tahun-Akademik-2025-2026.pdf"
+    ],
+    "expected_topics": ["semester_registration"],
+    "key_facts": ["25", "Agustus", "2025"]
+  },
+  {
+    "id": "finance_bi_scholarship_2024",
+    "question": "Apa informasi Beasiswa BI tahun 2024?",
+    "expected_domains": ["finance_tuition_and_scholarship"],
+    "expected_intent": "scholarship_info",
+    "expected_sources": ["Pengumuman-Beasiswa-BI-UM-tahun-2024.pdf.pdf"],
+    "expected_topics": ["bank_indonesia_scholarship"],
+    "key_facts": ["Bank Indonesia", "2024", "IPK", "3,00"]
+  },
+  {
+    "id": "finance_ukt_application",
+    "question": "Bagaimana cara mengajukan UKT?",
+    "expected_domains": ["finance_tuition_and_scholarship"],
+    "expected_intent": "procedure",
+    "expected_sources": ["s-Panduan-Aplikasi-Pengajuan-UKT-Semester-Gasal-2020-min.pdf"],
+    "expected_topics": ["ukt_application_guide"],
+    "key_facts": ["pengajuan", "UKT"]
+  },
+  {
+    "id": "facility_music_studio_procedure",
+    "question": "Bagaimana prosedur penggunaan studio musik?",
+    "expected_domains": ["facilities_and_campus_services"],
+    "expected_intent": "procedure",
+    "expected_sources": ["SOP-STUDIO-MUSIK-Tri-Wahyuningtyas.pdf"],
+    "expected_topics": ["music_studio"],
+    "key_facts": ["studio musik", "peminjaman", "KTM"]
+  },
+  {
+    "id": "facility_sociology_lab_fee",
+    "question": "Berapa tarif penggunaan alat laboratorium sosiologi?",
+    "expected_domains": ["facilities_and_campus_services"],
+    "expected_intent": "fee_info",
+    "expected_sources": [
+      "TARIF-PENGGUNAAN-ALAT-LAB-SOSIO-Deny-Wahyu-Apriadi.pdf"
+    ],
+    "expected_topics": ["sociology_laboratory_fee"],
+    "key_facts": ["Rp", "Hari", "laboratorium"]
+  },
+  {
+    "id": "facility_library",
+    "question": "Apa saja sarana dan prasarana perpustakaan UM?",
+    "expected_domains": ["facilities_and_campus_services"],
+    "expected_intent": "facility_info",
+    "expected_sources": ["Sarana dan Prasarana perpustakaan um.pdf"],
+    "expected_topics": ["library_facilities"],
+    "key_facts": ["perpustakaan"]
+  },
+  {
+    "id": "thesis_supervision_procedure",
+    "question": "Bagaimana prosedur pembimbingan skripsi?",
+    "expected_domains": ["thesis_final_project_and_graduation"],
+    "expected_intent": "procedure",
+    "expected_sources": ["SOP-Pembimbingan-Skripsi-Sah.pdf"],
+    "expected_topics": ["thesis_supervision"],
+    "key_facts": ["pembimbingan", "skripsi", "dosen pembimbing"]
+  },
+  {
+    "id": "thesis_guidance_card",
+    "question": "Apa fungsi kartu bimbingan skripsi?",
+    "expected_domains": ["thesis_final_project_and_graduation"],
+    "expected_intent": "form_requirement",
+    "expected_sources": ["KARTU-BIMBINGAN-SKRIPSI.pdf"],
+    "expected_topics": ["thesis_guidance_card"],
+    "key_facts": ["kartu bimbingan", "skripsi"]
+  },
+  {
+    "id": "graduation_2025_requirement",
+    "question": "Apa syarat mengikuti wisuda tahun 2025?",
+    "expected_domains": ["thesis_final_project_and_graduation"],
+    "expected_intent": "rule_policy",
+    "expected_sources": [
+      "SURAT-EDARAN-WISUDA-2025.pdf",
+      "Surat_Dinas-wisuda-132-Tahun-2025.pdf"
+    ],
+    "expected_topics": ["graduation_ceremony"],
+    "key_facts": ["wisuda", "2025", "siakad", "ijazah"]
+  }
+]
