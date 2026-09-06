@@ -10,7 +10,9 @@ FROM node:22-alpine AS builder
 WORKDIR /app/apps/web
 
 ARG VITE_API_BASE_URL=/api
+ARG VITE_BASE_PATH=/
 ENV VITE_API_BASE_URL=$VITE_API_BASE_URL
+ENV VITE_BASE_PATH=$VITE_BASE_PATH
 
 COPY --from=deps /app/apps/web/node_modules ./node_modules
 COPY apps/web ./

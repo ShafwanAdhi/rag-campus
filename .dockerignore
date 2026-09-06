@@ -43,6 +43,7 @@ __pycache__/
 
 data/chroma/
 data/chroma_legacy_empty/
+chroma.zip
 *.log
 
 .idea/

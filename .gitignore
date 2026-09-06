@@ -25,6 +25,7 @@ dist/
 
 data/chroma/
 data/chroma_legacy_empty/
+chroma.zip
 *.log
 
 notebooks/
