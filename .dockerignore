@@ -5,6 +5,11 @@
 .env
 .env.*
 !.env.example
+!.env.production.example
+**/.env
+**/.env.*
+!**/.env.example
+!**/.env.production.example
 
 .codex/
 anti-slop/

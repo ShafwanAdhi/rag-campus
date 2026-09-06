@@ -82,3 +82,21 @@ python scripts/evaluate_rag.py --limit 3
 Do not commit local secrets, dependency folders, generated build output, or local cache artifacts. The repository ignores `.env`, `node_modules`, Python cache folders, frontend build output, and the local Chroma database.
 
 For deployment, generate or mount `data/chroma` on the server after indexing. Keep `apps/api/.env.example` and `apps/web/.env.example` as templates, then create real `.env` files only on the deployment machine.
+
+## Docker Deployment
+
+Prepare the production environment file on the server:
+
+```bash
+cp .env.production.example .env.production
+```
+
+Fill `GROQ_API_KEY`, `VOYAGE_API_KEY`, and `FRONTEND_ORIGINS` in `.env.production`.
+
+Start the stack:
+
+```bash
+docker compose up -d --build
+```
+
+The public entrypoint is Nginx on port `80`. It serves the frontend and forwards `/api/*` requests to the FastAPI backend.
