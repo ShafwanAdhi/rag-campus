@@ -129,7 +129,7 @@ function AboutPage() {
               SA
             </div>
             <img
-              src="/developer-shafwan.jpg"
+              src={`${import.meta.env.BASE_URL}developer-shafwan.jpg`}
               alt="Shafwan Adhi Dwi Nugraha"
               className="absolute inset-0 h-full w-full object-cover"
               onError={(event) => {
