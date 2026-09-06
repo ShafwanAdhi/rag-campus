@@ -58,8 +58,10 @@ function ChatPage() {
   const [error, setErrorState] = useState<string | null>(persistedChatState.error);
   const [result, setResultState] = useState<ChatResponse | null>(persistedChatState.result);
   const cancelRef = useRef<(() => void) | null>(null);
+  const progressRef = useRef<HTMLDivElement | null>(null);
   const resultTopRef = useRef<HTMLDivElement | null>(null);
   const scrollTimerRef = useRef<number | null>(null);
+  const pendingProgressScrollRef = useRef(false);
   const pendingResultScrollRef = useRef(false);
 
   useEffect(() => {
@@ -130,6 +132,16 @@ function ChatPage() {
     }, delay);
   };
 
+  const isMobileViewport = () =>
+    window.matchMedia("(max-width: 767px)").matches;
+
+  useEffect(() => {
+    if (!pendingProgressScrollRef.current || !loading || result) return;
+
+    pendingProgressScrollRef.current = false;
+    scrollToElementTop(() => progressRef.current, 12, 520);
+  }, [loading, result]);
+
   useEffect(() => {
     if (!pendingResultScrollRef.current || !result || loading) return;
 
@@ -145,6 +157,7 @@ function ChatPage() {
     setResult(null);
     setProgress(5);
     setProgressMsg("Menghubungi server...");
+    pendingProgressScrollRef.current = isMobileViewport();
 
     cancelRef.current?.();
     cancelRef.current = chatStream(q, {
@@ -155,6 +168,7 @@ function ChatPage() {
       onDone: (r) => {
         setResult(r);
         setProgress(100);
+        pendingProgressScrollRef.current = false;
         pendingResultScrollRef.current = true;
         setLoading(false);
       },
@@ -164,6 +178,7 @@ function ChatPage() {
           setProgressMsg("Streaming gagal, mencoba mode standar...");
           const r = await chat(q);
           setResult(r);
+          pendingProgressScrollRef.current = false;
           pendingResultScrollRef.current = true;
           setLoading(false);
         } catch {
@@ -215,7 +230,7 @@ function ChatPage() {
         {hasOutput && (
           <div className="mt-6 space-y-5 md:mt-8">
             {loading && (
-              <div className="motion-panel-enter">
+              <div ref={progressRef} className="motion-panel-enter">
                 <ProgressCard progress={progress} message={progressMsg} onCancel={cancel} />
               </div>
             )}
