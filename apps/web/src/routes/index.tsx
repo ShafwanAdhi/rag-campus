@@ -201,7 +201,8 @@ function ChatPage() {
   const visibleContexts = result?.contexts?.filter((context) => !isHiddenContext(context)) ?? [];
 
   return (
-    <div className="motion-page-enter relative isolate min-h-full overflow-hidden">
+    <div className="motion-page-enter relative isolate min-h-full overflow-hidden bg-background">
+      <div aria-hidden="true" className="chat-cinematic-vignette pointer-events-none absolute inset-0 z-0" />
       <ParticleBackdrop />
       <div
         className={cn(

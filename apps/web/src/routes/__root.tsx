@@ -70,7 +70,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "SISDAS RAG Assistant" },
       { name: "description", content: "Asisten chatbot kampus berbasis Retrieval-Augmented Generation." },
     ],
-    links: [{ rel: "stylesheet", href: appCss }],
+    links: [
+      { rel: "stylesheet", href: appCss },
+      { rel: "icon", type: "image/png", href: `${import.meta.env.BASE_URL}logo_ragcampus.png` },
+      { rel: "shortcut icon", type: "image/png", href: `${import.meta.env.BASE_URL}logo_ragcampus.png` },
+      { rel: "apple-touch-icon", href: `${import.meta.env.BASE_URL}logo_ragcampus.png` },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,

@@ -94,6 +94,46 @@
       "liga" 0;
   }
 
+  .chat-cinematic-vignette {
+    background:
+      radial-gradient(
+        ellipse at center,
+        transparent 0%,
+        transparent 44%,
+        oklch(0.24 0.035 160 / 0.14) 78%,
+        oklch(0.15 0.035 160 / 0.25) 100%
+      ),
+      radial-gradient(
+        circle at 50% 36%,
+        oklch(1 0.012 150 / 0.54) 0%,
+        transparent 48%
+      ),
+      linear-gradient(
+        135deg,
+        oklch(0.92 0.035 155 / 0.46) 0%,
+        transparent 42%,
+        oklch(0.72 0.07 82 / 0.2) 100%
+      );
+  }
+
+  @media (max-width: 767px) {
+    .chat-cinematic-vignette {
+      background:
+        radial-gradient(
+          ellipse at center,
+          transparent 0%,
+          transparent 50%,
+          oklch(0.24 0.035 160 / 0.1) 84%,
+          oklch(0.15 0.035 160 / 0.18) 100%
+        ),
+        radial-gradient(
+          circle at 50% 34%,
+          oklch(1 0.012 150 / 0.5) 0%,
+          transparent 54%
+        );
+    }
+  }
+
   .motion-page-enter {
     animation: page-enter 720ms cubic-bezier(0.16, 1, 0.3, 1) both;
   }
