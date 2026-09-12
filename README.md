@@ -92,12 +92,12 @@ cp .env.production.example .env.production
 ```
 
 Fill `GROQ_API_KEY`, `VOYAGE_API_KEY`, and `FRONTEND_ORIGINS` in `.env.production`.
-For the default deployment under `https://shafwan.digital/rag-campus/`, keep:
+For the default deployment under `https://ragcampus.shafwan.digital/`, keep:
 
 ```env
-FRONTEND_ORIGINS=https://shafwan.digital
-VITE_BASE_PATH=/rag-campus/
-VITE_API_BASE_URL=/rag-campus/api
+FRONTEND_ORIGINS=https://ragcampus.shafwan.digital
+VITE_BASE_PATH=/
+VITE_API_BASE_URL=/api
 PUBLIC_HTTP_PORT=8081
 ```
 
@@ -107,4 +107,4 @@ Start the stack:
 docker compose up -d --build
 ```
 
-The Docker stack listens on `127.0.0.1:8081` by default. Put the host Nginx in front of it and proxy `/rag-campus/` to that local port.
+The Docker stack listens on `127.0.0.1:8081` by default. Put the host Nginx in front of it and proxy `ragcampus.shafwan.digital/` to that local port.
